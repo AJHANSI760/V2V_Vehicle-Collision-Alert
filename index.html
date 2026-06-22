@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>V2V Collision Alert System</title>
+  <meta
+    name="description"
+    content="A futuristic single-page website showcasing a Vehicle-to-Vehicle collision alert system with live simulation and interactive sections."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap"
+    rel="stylesheet"
+  >
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkR4j8cgYj/cR65w3p1zYj8R+v0XCeYFiN9Q=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  >
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <div class="background-grid"></div>
+    <div class="background-glow background-glow-left"></div>
+    <div class="background-glow background-glow-right"></div>
+
+    <header class="site-header site-header-polished">
+      <a class="brand" href="#top" aria-label="V2V Collision Alert System home">
+        <span class="brand-mark"><i class="fa-solid fa-car-side"></i></span>
+        <span class="brand-copy">
+          <strong>V2V Sentinel</strong>
+          <small>Collision Alert Platform</small>
+        </span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#how-it-works">How it works</a>
+        <a href="#platform">Platform</a>
+        <a href="/public">Public View</a>
+        <a href="#faq">FAQ</a>
+      </nav>
+      <div class="header-actions">
+        <a class="nav-login" href="/login">Sign in</a>
+        <a class="nav-cta" href="/public">View live demo</a>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero section real-hero">
+        <div class="hero-copy reveal">
+          <p class="eyebrow">Connected road safety platform</p>
+          <h1>V2V Collision Alert System</h1>
+          <p class="hero-subheadline">
+            A real-time dashboard for tracking nearby vehicles, measuring collision risk, and warning
+            drivers before a dangerous approach becomes an accident.
+          </p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="/public">Open Public View</a>
+            <a class="button button-secondary" href="/public">Public View</a>
+          </div>
+          <div class="trust-row" aria-label="Platform capabilities">
+            <span><i class="fa-solid fa-lock"></i> Secure driver login</span>
+            <span><i class="fa-solid fa-wave-square"></i> Live vehicle stream</span>
+            <span><i class="fa-solid fa-map-location-dot"></i> GPS telemetry</span>
+          </div>
+          <div class="hero-metrics">
+            <div class="metric-pill">
+              <span>&lt;100ms</span>
+              <small>alert response</small>
+            </div>
+            <div class="metric-pill">
+              <span>360°</span>
+              <small>environment awareness</small>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual reveal reveal-delay product-preview" aria-label="V2V dashboard preview">
+          <div class="preview-topbar">
+            <span></span><span></span><span></span>
+            <strong>V2V Sentinel Live Monitor</strong>
+          </div>
+          <div class="preview-map">
+            <div class="road road-horizontal"></div>
+            <div class="road road-vertical"></div>
+            <span class="map-car map-car-blue"></span>
+            <span class="map-car map-car-red"></span>
+            <span class="map-car map-car-cyan"></span>
+            <span class="risk-ring"></span>
+          </div>
+          <div class="preview-dock">
+            <div>
+              <small>Closest pair</small>
+              <strong>Alpha / Bravo · 42m</strong>
+            </div>
+            <div>
+              <small>Status</small>
+              <strong class="danger-text">Collision risk</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="public-strip section">
+        <div class="strip-copy reveal">
+          <p class="eyebrow">Public website view</p>
+          <h2>Let visitors inspect the live safety monitor without exposing driver controls.</h2>
+        </div>
+        <a class="button button-primary reveal reveal-delay" href="/public">Launch Public View</a>
+      </section>
+
+      <section id="how-it-works" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">How it works</p>
+          <h2>Three layers of sub-second awareness</h2>
+          <p>
+            Vehicles continuously exchange position and motion data, allowing onboard logic to
+            detect conflict trajectories before the driver can even see the threat.
+          </p>
+        </div>
+
+        <div class="process-flow">
+          <article class="process-card reveal">
+            <span class="step-index">01</span>
+            <div class="icon-badge"><i class="fa-solid fa-tower-broadcast"></i></div>
+            <h3>Broadcast telemetry</h3>
+            <p>Vehicles share GPS, speed, heading, and intent using DSRC or C-V2X links.</p>
+          </article>
+
+          <div class="process-connector reveal" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <article class="process-card reveal reveal-delay">
+            <span class="step-index">02</span>
+            <div class="icon-badge"><i class="fa-solid fa-microchip"></i></div>
+            <h3>Process local traffic</h3>
+            <p>The onboard unit fuses nearby vehicle messages with local motion and sensor data.</p>
+          </article>
+
+          <div class="process-connector reveal" aria-hidden="true">
+            <span></span>
+          </div>
+
+          <article class="process-card reveal reveal-delay-2">
+            <span class="step-index">03</span>
+            <div class="icon-badge alert"><i class="fa-solid fa-triangle-exclamation"></i></div>
+            <h3>Trigger instant alert</h3>
+            <p>Collision risk is predicted and a driver warning is issued in under 100 milliseconds.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="journey" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Driver journey</p>
+          <h2>How a user actually uses the V2V platform from signup to safe arrival</h2>
+          <p>
+            The product experience needs to be as practical as the safety logic. A driver should be
+            able to register once, configure alerts quickly, enter driving mode, receive real-time
+            warnings, and stop monitoring with minimal distraction.
+          </p>
+        </div>
+
+        <div class="journey-grid">
+          <article class="journey-step reveal">
+            <span class="step-index">01</span>
+            <h3>Register account</h3>
+            <p>Create a user profile with name, email or phone, password, and vehicle details such as type, model, and plate number.</p>
+          </article>
+          <article class="journey-step reveal reveal-delay">
+            <span class="step-index">02</span>
+            <h3>Login securely</h3>
+            <p>Authenticate with email and password, or optionally OTP, then route the user into the monitoring dashboard.</p>
+          </article>
+          <article class="journey-step reveal reveal-delay-2">
+            <span class="step-index">03</span>
+            <h3>Grant permissions</h3>
+            <p>Request GPS and notification access so the platform can track motion and deliver high-priority hazard alerts.</p>
+          </article>
+          <article class="journey-step reveal">
+            <span class="step-index">04</span>
+            <h3>Configure settings</h3>
+            <p>Adjust alert distance, sensitivity, notification type, dark mode, language, and emergency-contact preferences.</p>
+          </article>
+          <article class="journey-step reveal reveal-delay">
+            <span class="step-index">05</span>
+            <h3>Start driving mode</h3>
+            <p>Tap a large Start Monitoring control to begin sending live location, speed, heading, and timestamp updates.</p>
+          </article>
+          <article class="journey-step reveal reveal-delay-2">
+            <span class="step-index">06</span>
+            <h3>Watch live dashboard</h3>
+            <p>See your vehicle, nearby vehicles, risk indicators, alert severity, and directional movement on a clean real-time interface.</p>
+          </article>
+          <article class="journey-step reveal">
+            <span class="step-index">07</span>
+            <h3>Receive warnings</h3>
+            <p>Get sound, popup, and visual map alerts like “Vehicle approaching from right” when risk thresholds are crossed.</p>
+          </article>
+          <article class="journey-step reveal reveal-delay">
+            <span class="step-index">08</span>
+            <h3>Stop and review</h3>
+            <p>End monitoring after the trip, save alert history, and review prior warnings or trips for analysis and training.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="platform" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Platform modules</p>
+          <h2>Everything needed beyond the collision engine</h2>
+          <p>
+            A complete V2V website needs more than telemetry processing. It also needs account access,
+            system controls, usability filters, and admin visibility so drivers and operators can trust it.
+          </p>
+        </div>
+
+        <div class="platform-grid">
+          <article class="platform-card reveal">
+            <div class="icon-badge"><i class="fa-solid fa-user-shield"></i></div>
+            <h3>Login & user management</h3>
+            <ul class="detail-list">
+              <li>User registration with personal and vehicle details</li>
+              <li>Email/password login with optional OTP</li>
+              <li>Driver and admin roles</li>
+              <li>JWT-secured APIs, hashed passwords, session timeout</li>
+            </ul>
+          </article>
+
+          <article class="platform-card reveal reveal-delay">
+            <div class="icon-badge"><i class="fa-solid fa-sliders"></i></div>
+            <h3>Filters & alert controls</h3>
+            <ul class="detail-list">
+              <li>Distance range filters such as 10m to 100m</li>
+              <li>Vehicle-type filters for car, bike, and truck</li>
+              <li>Speed threshold control</li>
+              <li>Low, medium, and high sensitivity modes</li>
+            </ul>
+          </article>
+
+          <article class="platform-card reveal reveal-delay-2">
+            <div class="icon-badge alert"><i class="fa-solid fa-bell"></i></div>
+            <h3>Alert delivery system</h3>
+            <ul class="detail-list">
+              <li>Immediate collision warning</li>
+              <li>Lane-change and blind-spot alerts</li>
+              <li>Website notifications and sound alerts</li>
+              <li>Mobile push and emergency escalation options</li>
+            </ul>
+          </article>
+
+          <article class="platform-card reveal">
+            <div class="icon-badge"><i class="fa-solid fa-gear"></i></div>
+            <h3>User & safety settings</h3>
+            <ul class="detail-list">
+              <li>Enable or disable alerts</li>
+              <li>Sound, popup, SMS, and voice preferences</li>
+              <li>Minimum alert distance and auto-emergency toggle</li>
+              <li>Dark mode, language, and emergency contacts</li>
+            </ul>
+          </article>
+
+          <article class="platform-card reveal reveal-delay">
+            <div class="icon-badge"><i class="fa-solid fa-map-location-dot"></i></div>
+            <h3>Driving dashboard</h3>
+            <ul class="detail-list">
+              <li>Real-time map with your vehicle and surrounding traffic</li>
+              <li>Risk zones highlighted in yellow or red</li>
+              <li>Speed, heading, and lane-state indicators</li>
+              <li>Alert history and trip review panels</li>
+            </ul>
+          </article>
+
+          <article class="platform-card reveal reveal-delay-2">
+            <div class="icon-badge"><i class="fa-solid fa-brain"></i></div>
+            <h3>Smart differentiators</h3>
+            <ul class="detail-list">
+              <li>AI-based collision prediction</li>
+              <li>Accident-history analytics</li>
+              <li>IoT sensor integration</li>
+              <li>Voice alerts and emergency auto-call support</li>
+            </ul>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Core capabilities</p>
+          <h2>Designed for dense traffic, blind spots, and split-second decisions</h2>
+        </div>
+
+        <div class="feature-grid">
+          <article class="feature-card reveal">
+            <i class="fa-solid fa-location-crosshairs"></i>
+            <h3>Real-Time Proximity Detection</h3>
+            <p>Constantly evaluates closing distance and relative speed between nearby vehicles.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay">
+            <i class="fa-solid fa-globe"></i>
+            <h3>360° Threat Awareness</h3>
+            <p>Maintains spatial awareness around the vehicle beyond line-of-sight constraints.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <i class="fa-solid fa-people-arrows"></i>
+            <h3>Multi-Vehicle Communication</h3>
+            <p>Handles simultaneous broadcasts from multiple surrounding vehicles in motion.</p>
+          </article>
+          <article class="feature-card reveal">
+            <i class="fa-solid fa-gauge-high"></i>
+            <h3>Low Latency Alerts (&lt;100ms)</h3>
+            <p>Optimized edge decisioning keeps the warning pipeline nearly instantaneous.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay">
+            <i class="fa-solid fa-cloud-moon-rain"></i>
+            <h3>Works in No-Visibility Conditions</h3>
+            <p>Provides anticipatory awareness in fog, darkness, rain, and obstructed intersections.</p>
+          </article>
+          <article class="feature-card reveal reveal-delay-2">
+            <i class="fa-solid fa-car-burst"></i>
+            <h3>Emergency Brake Pre-warning</h3>
+            <p>Surfaces danger before emergency braking is needed, reducing reaction delay.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="demo" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Live simulation</p>
+          <h2>Watch conflict prediction unfold on an interactive roadway</h2>
+          <p>
+            The simulation shows connected vehicles sharing movement data. When paths intersect inside
+            the safety threshold, the system raises a flashing collision alert.
+          </p>
+        </div>
+
+        <div class="demo-layout">
+          <div class="demo-panel reveal">
+            <div class="demo-canvas-wrap">
+              <canvas id="trafficCanvas" width="920" height="520" aria-label="Vehicle collision simulation"></canvas>
+              <div id="demoAlert" class="demo-alert" role="status" aria-live="polite">
+                <span>⚠️ Collision Risk Detected!</span>
+              </div>
+            </div>
+
+            <div class="demo-controls">
+              <button id="playPauseBtn" class="button button-primary" type="button">Pause</button>
+              <button id="resetBtn" class="button button-secondary" type="button">Reset</button>
+              <label class="sound-toggle" for="soundToggle">
+                <input id="soundToggle" type="checkbox">
+                <span>Enable alert beep</span>
+              </label>
+            </div>
+          </div>
+
+          <aside class="demo-sidebar reveal reveal-delay">
+            <div class="sidebar-card telemetry-overview">
+              <h3>Live telemetry</h3>
+              <div class="overview-grid">
+                <div class="overview-stat">
+                  <span class="overview-label">Closest separation</span>
+                  <strong id="closestDistance">-- m</strong>
+                </div>
+                <div class="overview-stat">
+                  <span class="overview-label">Tracked vehicles</span>
+                  <strong id="trackedVehicles">4</strong>
+                </div>
+                <div class="overview-stat">
+                  <span class="overview-label">Current alert pair</span>
+                  <strong id="alertPair">None</strong>
+                </div>
+                <div class="overview-stat">
+                  <span class="overview-label">GPS refresh</span>
+                  <strong id="gpsTimestamp">Live</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="sidebar-card telemetry-card">
+              <h3>Vehicle tracking</h3>
+              <div id="telemetryList" class="telemetry-list" aria-live="polite"></div>
+            </div>
+
+            <div class="sidebar-card">
+              <h3>Simulation logic</h3>
+              <p>Each vehicle follows a lane path and continuously measures separation to other vehicles.</p>
+            </div>
+            <div class="sidebar-card">
+              <h3>Alert threshold</h3>
+              <p>A collision-risk state is triggered when vehicles enter a defined proximity buffer.</p>
+            </div>
+            <div class="sidebar-card">
+              <h3>Driver response</h3>
+              <p>Warnings can be visual, audible, or integrated with advanced driver assistance systems.</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section id="technology" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Technology stack</p>
+          <h2>Built on communication, sensing, and edge intelligence</h2>
+        </div>
+
+        <div class="tech-grid">
+          <article class="tech-card reveal">
+            <i class="fa-solid fa-wifi"></i>
+            <h3>DSRC (802.11p)</h3>
+            <p>Dedicated short-range communication for direct low-latency V2V exchange.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay">
+            <i class="fa-solid fa-signal"></i>
+            <h3>C-V2X (LTE/5G)</h3>
+            <p>Cellular vehicle communication enabling broader coverage and future network integration.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay-2">
+            <i class="fa-solid fa-satellite-dish"></i>
+            <h3>GPS + IMU Sensors</h3>
+            <p>Combines location, acceleration, and heading data for high-confidence vehicle state.</p>
+          </article>
+          <article class="tech-card reveal">
+            <i class="fa-solid fa-server"></i>
+            <h3>Edge Computing</h3>
+            <p>Performs risk analysis locally for deterministic, fast hazard prediction.</p>
+          </article>
+          <article class="tech-card reveal reveal-delay">
+            <i class="fa-solid fa-hard-drive"></i>
+            <h3>OBU Hardware</h3>
+            <p>Embedded onboard units manage message handling, fusion, and alert execution.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="architecture" class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Backend architecture</p>
+          <h2>A practical system design for real-time V2V monitoring</h2>
+          <p>
+            The website can stay frontend-first for demos, but a production V2V platform needs a
+            secure backend, real-time messaging, persistent storage, and a clear API contract.
+          </p>
+        </div>
+
+        <div class="architecture-grid">
+          <article class="architecture-card reveal">
+            <h3>Recommended stack</h3>
+            <div class="chip-row">
+              <span class="chip">Frontend: HTML/CSS/JS or React</span>
+              <span class="chip">Backend: Node.js or Django</span>
+              <span class="chip">Database: MongoDB or PostgreSQL</span>
+              <span class="chip">Realtime: WebSockets / Socket.IO</span>
+            </div>
+            <p>Use WebSockets for live vehicle updates while the REST API handles authentication, settings, history, and admin operations.</p>
+          </article>
+
+          <article class="architecture-card reveal reveal-delay">
+            <h3>Core safety logic</h3>
+            <div class="formula-panel">
+              <p><strong>Incoming data:</strong> latitude, longitude, speed, heading, timestamp</p>
+              <p><strong>Distance:</strong> Haversine formula between nearby vehicles</p>
+              <p><strong>Risk score:</strong> distance threshold + speed delta + same-path or intersection conflict</p>
+              <p><strong>Trigger:</strong> if vehicles are inside a danger radius, send alert immediately</p>
+            </div>
+          </article>
+
+          <article class="architecture-card reveal reveal-delay-2">
+            <h3>API endpoints</h3>
+            <div class="code-panel">
+              <code>/register</code>
+              <code>/login</code>
+              <code>/send-vehicle-data</code>
+              <code>/get-nearby-vehicles</code>
+              <code>/alerts</code>
+            </div>
+            <p>These endpoints cover onboarding, authentication, live data ingestion, proximity lookup, and alert retrieval.</p>
+          </article>
+        </div>
+
+        <div class="schema-grid">
+          <article class="schema-card reveal">
+            <h3>Users</h3>
+            <ul class="detail-list compact">
+              <li>`id`</li>
+              <li>`name`</li>
+              <li>`email`</li>
+              <li>`phone`</li>
+              <li>`password_hash`</li>
+              <li>`vehicle_id`</li>
+              <li>`role`</li>
+            </ul>
+          </article>
+          <article class="schema-card reveal reveal-delay">
+            <h3>Vehicles</h3>
+            <ul class="detail-list compact">
+              <li>`id`</li>
+              <li>`type`</li>
+              <li>`model`</li>
+              <li>`plate_number`</li>
+              <li>`user_id`</li>
+              <li>`status`</li>
+            </ul>
+          </article>
+          <article class="schema-card reveal reveal-delay-2">
+            <h3>Live data</h3>
+            <ul class="detail-list compact">
+              <li>`vehicle_id`</li>
+              <li>`latitude`</li>
+              <li>`longitude`</li>
+              <li>`speed`</li>
+              <li>`direction`</li>
+              <li>`timestamp`</li>
+            </ul>
+          </article>
+          <article class="schema-card reveal">
+            <h3>Alerts</h3>
+            <ul class="detail-list compact">
+              <li>`alert_id`</li>
+              <li>`vehicle_id`</li>
+              <li>`severity`</li>
+              <li>`alert_type`</li>
+              <li>`message`</li>
+              <li>`created_at`</li>
+            </ul>
+          </article>
+        </div>
+
+        <div class="flow-strip reveal">
+          <div>Login</div>
+          <div>Grant GPS</div>
+          <div>Start Monitoring</div>
+          <div>Send Live Data</div>
+          <div>Process Nearby Vehicles</div>
+          <div>Trigger Alert</div>
+          <div>Driver Responds</div>
+        </div>
+      </section>
+
+      <section class="section stats-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Impact metrics</p>
+          <h2>Safety gains that matter in real traffic environments</h2>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card reveal">
+            <h3><span class="counter" data-target="94" data-suffix="%">0</span></h3>
+            <p>of crashes involve human error</p>
+          </article>
+          <article class="stat-card reveal reveal-delay">
+            <h3><span class="counter" data-target="360" data-suffix="°">0</span></h3>
+            <p>detection radius awareness</p>
+          </article>
+          <article class="stat-card reveal reveal-delay-2">
+            <h3><span class="counter" data-target="100" data-prefix="&lt;" data-suffix="ms">0</span></h3>
+            <p>alert latency target</p>
+          </article>
+          <article class="stat-card reveal">
+            <h3><span class="counter" data-target="80" data-prefix="Up to " data-suffix="%">0</span></h3>
+            <p>crash reduction potential</p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Use cases</p>
+          <h2>Scenarios where anticipatory alerts can change outcomes</h2>
+        </div>
+
+        <div class="use-case-grid">
+          <article class="use-case-card reveal">
+            <h3>Highway Merging Alerts</h3>
+            <p>Warns drivers about fast-approaching vehicles hidden in adjacent-lane blind zones.</p>
+          </article>
+          <article class="use-case-card reveal reveal-delay">
+            <h3>Blind Intersection Warning</h3>
+            <p>Detects cross traffic beyond buildings, trucks, and other line-of-sight blockers.</p>
+          </article>
+          <article class="use-case-card reveal reveal-delay-2">
+            <h3>Emergency Vehicle Approach</h3>
+            <p>Notifies drivers when ambulances or police vehicles are inbound before they are visible.</p>
+          </article>
+          <article class="use-case-card reveal">
+            <h3>Adverse Weather Navigation</h3>
+            <p>Maintains safety awareness during fog, heavy rain, and nighttime low-visibility driving.</p>
+          </article>
+          <article class="use-case-card reveal reveal-delay">
+            <h3>Rear-End Collision Prevention</h3>
+            <p>Flags sudden slowdowns and unsafe closing rates for rapid lane and braking decisions.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section">
+        <div class="section-heading reveal">
+          <p class="eyebrow">FAQ</p>
+          <h2>Questions teams ask before deployment</h2>
+        </div>
+
+        <div class="faq-list">
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Does it work without internet?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. Core V2V communication is designed for direct vehicle-to-vehicle exchange and does not depend on public internet access.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal reveal-delay">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What range does V2V communication cover?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Typical operating range can extend several hundred meters, depending on protocol, hardware, environment, and traffic density.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal reveal-delay-2">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Is it compatible with all vehicles?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Compatibility depends on the presence of compliant onboard communication hardware, though retrofit OBU options can expand adoption.</p>
+            </div>
+          </article>
+          <article class="faq-item reveal">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How is driver privacy protected?</span>
+              <i class="fa-solid fa-plus"></i>
+            </button>
+            <div class="faq-answer">
+              <p>Systems typically share safety-critical telemetry rather than personal identity, with rotating identifiers and secure message frameworks to protect privacy.</p>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <span class="brand-mark"><i class="fa-solid fa-car-side"></i></span>
+          <span class="brand-copy">
+            <strong>V2V Sentinel</strong>
+            <small>Predict. Alert. Protect.</small>
+          </span>
+        </a>
+      </div>
+      <nav class="footer-nav" aria-label="Footer navigation">
+        <a href="#top">Home</a>
+        <a href="#how-it-works">Workflow</a>
+        <a href="#journey">User Flow</a>
+        <a href="#demo">Simulation</a>
+        <a href="#architecture">Architecture</a>
+        <a href="#technology">Technology</a>
+      </nav>
+      <a class="footer-link" href="mailto:contact@v2vsentinel.com">Get in Touch</a>
+    </footer>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Public View | V2V Sentinel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-page">
+  <header class="site-header public-header">
+    <a class="brand" href="/">
+      <span class="brand-mark"><i class="fa-solid fa-car-side"></i></span>
+      <span class="brand-copy"><strong>V2V Sentinel</strong><small>Public Safety Monitor</small></span>
+    </a>
+    <nav class="site-nav" aria-label="Public navigation">
+      <a href="/">Website</a>
+      <a href="/login">Driver Login</a>
+      <a href="/dashboard">Dashboard</a>
+    </nav>
+  </header>
+  <main class="app-layout public-layout">
+    <section class="app-main">
+      <div class="section-heading public-title reveal is-visible">
+        <p class="eyebrow">Public safety view</p>
+        <h1 class="app-title">Live V2V traffic awareness</h1>
+        <p class="app-lead">A read-only public view for demonstrations, visitors, and stakeholders. Driver settings and protected dashboard tools remain behind login.</p>
+      </div>
+
+      <div class="overview-grid app-overview">
+        <div class="overview-stat"><span class="overview-label">Mode</span><strong>Public</strong></div>
+        <div class="overview-stat"><span class="overview-label">Vehicles visible</span><strong id="publicVehicleCount">0</strong></div>
+        <div class="overview-stat"><span class="overview-label">Closest pair</span><strong id="publicClosestPair">--</strong></div>
+        <div class="overview-stat"><span class="overview-label">Updated</span><strong id="publicUpdated">--</strong></div>
+      </div>
+
+      <div class="dashboard-grid">
+        <div class="dashboard-panel">
+          <div class="panel-head">
+            <h2>Public live map</h2>
+            <span id="publicAlertBadge" class="inline-badge">Read only</span>
+          </div>
+          <canvas id="publicMap" width="920" height="520" aria-label="Public V2V traffic map"></canvas>
+        </div>
+
+        <aside class="dashboard-side">
+          <div class="dashboard-panel">
+            <div class="panel-head"><h2>Vehicle feed</h2></div>
+            <div id="publicTelemetry" class="telemetry-list"></div>
+          </div>
+          <div class="dashboard-panel">
+            <div class="panel-head"><h2>Access</h2></div>
+            <div class="stack-actions">
+              <a class="button button-primary" href="/login">Driver Login</a>
+              <a class="button button-secondary" href="/">Website Home</a>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </main>
+  <script src="public.js"></script>
+</body>
+</html>

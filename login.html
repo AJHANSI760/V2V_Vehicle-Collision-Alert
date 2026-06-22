@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login | V2V Sentinel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-page">
+  <main class="app-shell auth-shell">
+    <section class="auth-copy reveal is-visible">
+      <a class="brand" href="/">
+        <span class="brand-mark"><i class="fa-solid fa-car-side"></i></span>
+        <span class="brand-copy"><strong>V2V Sentinel</strong><small>Secure Driver Access</small></span>
+      </a>
+      <p class="eyebrow">Welcome back</p>
+      <h1 class="app-title">Login or create your driving profile</h1>
+      <p class="app-lead">Use the demo account `demo@v2v.com` with password `V2V-Demo#2026`, or register a new driver and vehicle.</p>
+      <div class="auth-highlights">
+        <div class="metric-pill"><span>JWT-style</span><small>signed API auth</small></div>
+        <div class="metric-pill"><span>Live</span><small>vehicle streaming</small></div>
+      </div>
+    </section>
+
+    <section class="auth-panel reveal is-visible">
+      <div class="tab-row">
+        <button class="tab-button active" data-tab="login" type="button">Login</button>
+        <button class="tab-button" data-tab="register" type="button">Register</button>
+      </div>
+
+      <form id="loginForm" class="auth-form active">
+        <label>Email<input name="email" type="email" value="demo@v2v.com" required></label>
+        <label>Password<input name="password" type="password" value="V2V-Demo#2026" autocomplete="current-password" required></label>
+        <button class="button button-primary" type="submit">Open Dashboard</button>
+      </form>
+
+      <form id="registerForm" class="auth-form">
+        <label>Name<input name="name" type="text" required></label>
+        <label>Email<input name="email" type="email" required></label>
+        <label>Phone<input name="phone" type="tel"></label>
+        <div class="form-grid">
+          <label>Vehicle Type<input name="vehicleType" type="text" placeholder="Car" required></label>
+          <label>Vehicle Model<input name="vehicleModel" type="text" placeholder="Sentinel X" required></label>
+        </div>
+        <label>Vehicle Number<input name="vehicleNumber" type="text" placeholder="V2V-100" required></label>
+        <label>Password<input name="password" type="password" minlength="12" pattern="(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^A-Za-z0-9]).{12,}" autocomplete="new-password" required></label>
+        <p class="form-hint">Password must be 12+ characters with uppercase, lowercase, number, and symbol.</p>
+        <button class="button button-primary" type="submit">Create Account</button>
+      </form>
+
+      <p id="authMessage" class="status-message" aria-live="polite"></p>
+    </section>
+  </main>
+  <script src="auth.js"></script>
+</body>
+</html>

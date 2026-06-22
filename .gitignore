@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.py[cod]
+.v2v_secret
+app_data.json
+.env
+.venv/
+venv/
+node_modules/
+

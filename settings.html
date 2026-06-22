@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Settings | V2V Sentinel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="app-page">
+  <div class="app-layout">
+    <aside class="app-sidebar">
+      <a class="brand" href="/">
+        <span class="brand-mark"><i class="fa-solid fa-car-side"></i></span>
+        <span class="brand-copy"><strong>V2V Sentinel</strong><small>Preferences & Safety</small></span>
+      </a>
+      <nav class="app-nav">
+        <a href="/dashboard">Dashboard</a>
+        <a class="active" href="/settings">Settings</a>
+        <a href="/">Landing Page</a>
+      </nav>
+      <div class="sidebar-card">
+        <h3>Profile</h3>
+        <p id="settingsProfile">Loading driver details...</p>
+      </div>
+    </aside>
+
+    <main class="app-main">
+      <section class="page-section">
+        <div class="section-heading reveal is-visible">
+          <p class="eyebrow">Settings</p>
+          <h1 class="app-title">Control alerts, filters, and safety preferences</h1>
+          <p class="app-lead">These preferences are saved through the backend and restored for the authenticated user.</p>
+        </div>
+      </section>
+
+      <section class="page-section">
+        <form id="settingsForm" class="settings-form dashboard-panel">
+          <div class="settings-grid">
+            <label>Minimum alert distance (m)<input name="distanceRange" type="number" min="10" max="200"></label>
+            <label>Speed threshold (km/h)<input name="speedThreshold" type="number" min="10" max="180"></label>
+            <label>Sensitivity
+              <select name="sensitivity">
+                <option value="low">Low</option>
+                <option value="medium">Medium</option>
+                <option value="high">High</option>
+              </select>
+            </label>
+            <label>Vehicle filter
+              <select name="vehicleFilter">
+                <option value="all">All vehicles</option>
+                <option value="car">Car</option>
+                <option value="bike">Bike</option>
+                <option value="truck">Truck</option>
+              </select>
+            </label>
+            <label>Language
+              <select name="language">
+                <option>English</option>
+                <option>Hindi</option>
+                <option>Telugu</option>
+              </select>
+            </label>
+            <label>Emergency contact<input name="emergencyContact" type="text" placeholder="+91 98765 43210"></label>
+          </div>
+
+          <div class="toggle-grid">
+            <label class="toggle-item"><input name="soundAlerts" type="checkbox"> <span>Enable sound alerts</span></label>
+            <label class="toggle-item"><input name="popupAlerts" type="checkbox"> <span>Enable popup alerts</span></label>
+            <label class="toggle-item"><input name="smsAlerts" type="checkbox"> <span>Enable SMS alerts</span></label>
+            <label class="toggle-item"><input name="darkMode" type="checkbox"> <span>Use dark mode</span></label>
+            <label class="toggle-item"><input name="autoEmergency" type="checkbox"> <span>Auto emergency escalation</span></label>
+          </div>
+
+          <div class="stack-actions">
+            <button class="button button-primary" type="submit">Save Settings</button>
+            <a class="button button-secondary" href="/dashboard">Back to Dashboard</a>
+          </div>
+          <p id="settingsMessage" class="status-message" aria-live="polite"></p>
+        </form>
+      </section>
+    </main>
+  </div>
+  <script src="settings.js"></script>
+</body>
+</html>
