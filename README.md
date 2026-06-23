@@ -18,21 +18,6 @@ V2V Sentinel is a public-facing website and authenticated dashboard for a Vehicl
 - Simulated real-time vehicle stream through WebSocket
 - Collision-risk detection using distance thresholds
 
-## Demo Credentials
-
-Use these credentials for the protected dashboard:
-
-```text
-Email: demo@v2v.com
-Password: V2V-Demo#2026
-```
-
-## Run Locally
-
-```bash
-cd /Users/agraharamswarupa/rtp
-python3 app.py
-```
 
 Open these pages in your browser:
 
