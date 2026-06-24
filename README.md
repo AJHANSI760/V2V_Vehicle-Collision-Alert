@@ -11,7 +11,7 @@ V2V Sentinel is a public-facing website and authenticated dashboard for a Vehicl
 - Public website with a polished product-style landing page
 - Read-only public V2V traffic monitor
 - Login and registration flow
-- Strong password rules for new accounts
+- Strong password rules for new account
 - Signed token authentication
 - Driver dashboard with live vehicle tracking
 - Settings page for alert distance, sensitivity, notification preferences, and emergency options
